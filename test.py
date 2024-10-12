@@ -11,3 +11,4 @@ for i in range(1<<N):
     ans=min(ans, max(total, k_total-total))
     
 print(ans)
+print()
