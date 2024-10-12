@@ -1,8 +1,13 @@
-userinput = input()
-mydict = {char:i for i, char in enumerate(userinput)}
-print(mydict)
-print(mydict["a"])
-print(mydict.get("a"))
-for key in mydict.keys():
-    print( key)
-print(mydict.keys())
+N=int(input())
+K=list(map(int, input().split()))
+k_total=sum(K)
+ans = 10**18
+
+for i in range(1<<N):
+    total=0
+    for j in range(N):
+        if (i>>j)&1:
+            total+=K[j]
+    ans=min(ans, max(total, k_total-total))
+    
+print(ans)
