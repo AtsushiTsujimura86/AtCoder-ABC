@@ -1,8 +1,4 @@
-s = []
-N=int(input())
-for i in range(N):
-    n = int(input())
-    while s and s[-1] < n:
-        s.pop()
-    s.append(n)
-    print(s)
+from bisect import bisect_right
+li = [0,0, 1,1,1,2,2]
+idx = bisect_right(li, 1, 0)
+print(idx)
